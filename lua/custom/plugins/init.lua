@@ -10,7 +10,9 @@ return {
   	cmd = "Codeium",
  	 build = ":Codeium Auth",
  	 opts = {},
+ 	 lazy = false 
 	},
+	
 	{
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
@@ -31,5 +33,8 @@ return {
             -- Snippets
             {'L3MON4D3/LuaSnip'},             -- Required
             {'rafamadriz/friendly-snippets'}, -- Optional
-        }
+        },
+        
+       -- { 'numirias/semshi', lazy = false, opts={} },
+        
 }

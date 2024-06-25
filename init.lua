@@ -234,7 +234,9 @@ require('lazy').setup({
     cmd = "Codeium",
     build = ":Codeium Auth",
     opts = {},
+    lazy = false
   },
+          --{ 'numirias/semshi', lazy = false, opts={} },
   
       {
         'VonHeikemen/lsp-zero.nvim',
@@ -463,7 +465,9 @@ require('lazy').setup({
     require('mason').setup()
     local mason_lspconfig = require 'mason-lspconfig'
     mason_lspconfig.setup {
-        ensure_installed = { "pyright" }
+        ensure_installed = { "pyright", },
+        automatic_installation = true,
+
     }
     require("lspconfig").pyright.setup {
         capabilities = capabilities,
@@ -879,7 +883,8 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'python'},
+    --ensure_installed = { }
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'python', "ninja", "rst" },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
